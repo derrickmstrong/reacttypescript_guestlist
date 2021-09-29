@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
+import Form from './components/Form';
 import List from './components/List';
 
-interface IState {
+export interface IState {
   people: {
     name: string,
     age: number,
@@ -28,6 +29,7 @@ function App() {
     <div className="App">
       <h1>Guest List</h1>
       <List people={people} />
+      <Form people={people} setPeople={setPeople} />
     </div>
   );
 }
