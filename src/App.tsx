@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
 import './App.css';
 
+interface IState {
+  people: {
+    name: string,
+    age: number,
+    url: string,
+    note?: string
+  }[]
+}
+
 function App() {
-  const [number, setNumber] = useState<number | string>(5)
-  const changeNumber = () => {
-    setNumber("10")
-  }
+
+  const [people, setPeople] = useState<IState["people"]>([])
+
   return (
     <div className="App">
-      {number}
-      <button onClick={changeNumber}>Change to 10</button>
+      <h1>Guest List</h1>
     </div>
   );
 }
